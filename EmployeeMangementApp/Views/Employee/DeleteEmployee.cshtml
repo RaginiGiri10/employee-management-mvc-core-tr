@@ -1,0 +1,42 @@
+﻿@model DeleteEmployeeViewModel
+
+<h2>Are you sure you want to delete?</h2>
+<hr/>
+
+<form asp-controller="Employee" asp-action="DeleteEmployee" method="post">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <label asp-for="FirstName"></label>
+        </div>
+        <div class="col-sm-3">
+            @Model.FirstName
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <label>Last Name</label>
+        </div>
+        <div class="col-sm-3">
+            @Model.LasttName
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <label asp-for="DepartmentName"></label>
+        </div>
+        <div class="col-sm-3">
+            @Model.DepartmentName
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" col-sm-12">
+            <button type="submit" class="btn btn-danger">Delete</button>     
+            <a class="btn btn-primary" asp-controller="Employee" asp-action="Index">Cancel</a>
+        </div>
+
+    </div>
+</form>
